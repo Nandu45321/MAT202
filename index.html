@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Distributions Formula Sheet</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px;
+            background: #2c3e50;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            font-style: italic;
+            color: #ecf0f1;
+        }
+        
+        .author {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+        }
+        
+        .subsection-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .formula {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            overflow-x: auto;
+        }
+        
+        .explanation {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #ecf0f1;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Probability Distributions Formula Sheet</h1>
+            <p class="date">September 21, 2025</p>
+            <p class="author">Bernard Rv</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Discrete Distributions</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Bernoulli Distribution</div>
+                    <div class="formula">
+                        \[ P(X=0) = 1 - p \]
+                        \[ P(X=1) = p \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = p \]
+                        \[ \text{Var}[X] = p(1-p) \]
+                    </div>
+                    <div class="explanation">
+                        Models a single trial with two possible outcomes (success/failure). Parameter p is the probability of success.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Binomial Distribution</div>
+                    <div class="formula">
+                        \[ P(X=i) = \binom{n}{i} p^i (1-p)^{n-i} \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = np \]
+                        \[ \text{Var}[X] = np(1-p) \]
+                    </div>
+                    <div class="explanation">
+                        Models the number of successes in n independent Bernoulli trials. Parameters: n (number of trials), p (success probability).
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Geometric Distribution</div>
+                    <div class="formula">
+                        \[ P(X=i) = (1-p)^{i-1} p \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \frac{1}{p} \]
+                        \[ \text{Var}[X] = \frac{1-p}{p^2} \]
+                    </div>
+                    <div class="explanation">
+                        Models the number of trials needed to get the first success in a sequence of independent Bernoulli trials.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Poisson Distribution</div>
+                    <div class="formula">
+                        \[ P(X=x) = \frac{e^{-\lambda} \lambda^x}{x!} \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \lambda \]
+                        \[ \text{Var}[X] = \lambda \]
+                    </div>
+                    <div class="explanation">
+                        Models the number of events occurring in a fixed interval of time or space. Parameter λ is the average rate.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Continuous Distributions</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Uniform Distribution</div>
+                    <div class="formula">
+                        \[ f(x) = \frac{1}{b-a} \quad \text{for } a \leq x \leq b \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \frac{a+b}{2} \]
+                        \[ \text{Var}[X] = \frac{(b-a)^2}{12} \]
+                    </div>
+                    <div class="explanation">
+                        All intervals of the same length have equal probability. Parameters: a (minimum), b (maximum).
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Normal Distribution</div>
+                    <div class="formula">
+                        \[ f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \mu \]
+                        \[ \text{Var}[X] = \sigma^2 \]
+                    </div>
+                    <div class="explanation">
+                        The most common continuous distribution. Parameters: μ (mean), σ (standard deviation).
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Standard Normal Distribution</div>
+                    <div class="formula">
+                        \[ Z \sim N(0, 1) \]
+                        \[ \Phi(-z) = 1 - \Phi(z) \]
+                    </div>
+                    <div class="explanation">
+                        Normal distribution with mean 0 and variance 1. Φ(z) is the cumulative distribution function.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Exponential Distribution</div>
+                    <div class="formula">
+                        \[ f(x) = \lambda e^{-\lambda x} \quad \text{for } x \geq 0 \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \frac{1}{\lambda} \]
+                        \[ \text{Var}[X] = \frac{1}{\lambda^2} \]
+                    </div>
+                    <div class="explanation">
+                        Models the time between events in a Poisson process. Parameter λ is the rate parameter.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Special Distributions</h2>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Gamma Distribution</div>
+                    <div class="formula">
+                        \[ f(x) = \frac{\lambda^{\alpha} x^{\alpha-1} e^{-\lambda x}}{\Gamma(\alpha)} \quad \text{for } x > 0 \]
+                    </div>
+                    <div class="formula">
+                        \[ \Gamma(\alpha) = \int_0^{\infty} e^{-y} y^{\alpha-1} dy \]
+                        \[ \Gamma(n) = (n-1)! \quad \text{for integer } n \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \frac{\alpha}{\lambda} \]
+                        \[ \text{Var}[X] = \frac{\alpha}{\lambda^2} \]
+                    </div>
+                    <div class="explanation">
+                        Generalization of the exponential distribution. Parameters: α (shape), λ (rate).
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Beta Distribution</div>
+                    <div class="formula">
+                        \[ f(x) = \frac{x^{\alpha-1} (1-x)^{\beta-1}}{B(\alpha, \beta)} \quad \text{for } 0 < x < 1 \]
+                    </div>
+                    <div class="formula">
+                        \[ B(\alpha, \beta) = \int_0^1 x^{\alpha-1} (1-x)^{\beta-1} dx \]
+                    </div>
+                    <div class="formula">
+                        \[ E[X] = \frac{\alpha}{\alpha + \beta} \]
+                        \[ \text{Var}[X] = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} \]
+                    </div>
+                    <div class="explanation">
+                        Models random variables limited to intervals of finite length. Parameters: α, β > 0.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Linear Transformations</div>
+                    <div class="formula">
+                        \[ E[aX + b] = aE[X] + b \]
+                        \[ \text{Var}[aX + b] = a^2 \text{Var}[X] \]
+                    </div>
+                    <div class="explanation">
+                        Formulas for expectation and variance of linearly transformed random variables.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <div class="subsection-title">Moment Generating Function (Normal)</div>
+                    <div class="formula">
+                        \[ M_X(t) = e^{\mu t + \frac{1}{2} \sigma^2 t^2} \]
+                    </div>
+                    <div class="explanation">
+                        The moment generating function for a normal distribution.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Math 202 Formula Sheet | Probability Distributions</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add subtle animation to formulas when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const formulas = document.querySelectorAll('.formula');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            formulas.forEach(formula => {
+                formula.style.opacity = 0;
+                formula.style.transform = 'translateY(20px)';
+                formula.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(formula);
+            });
+        });
+    </script>
+</body>
+</html>
