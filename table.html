@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability Distributions Reference Table</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-style: italic;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        thead tr {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        tbody tr:nth-of-type(even) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        tbody tr:hover {
+            background-color: #e8f4fc;
+            transition: background-color 0.2s;
+        }
+
+        .distribution-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .math {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+            margin: 30px 0 20px 0;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.8em;
+            }
+
+            .math {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            th, td {
+                padding: 6px 8px;
+                font-size: 0.75em;
+            }
+
+            .math {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Probability Distributions Reference Table</h1>
+        <a href="index.html" style="color: #ffffff; text-decoration: underline; font-weight: bold;">&#8592; Back to Formula Sheet</a>
+
+        <p class="date">September 21, 2025</p>
+    </header>
+
+    <div class="content">
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Distribution</th>
+                    <th>PDF/PMF</th>
+                    <th>Mean (E[X])</th>
+                    <th>Variance (Var[X])</th>
+                    <th>E[X²]</th>
+                    <th>Parameters</th>
+                    <th>Support</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="distribution-name">Bernoulli</td>
+                    <td class="math">\( P(X=k) = \begin{cases} p & \text{if } k=1 \\ 1-p & \text{if } k=0 \end{cases} \)</td>
+                    <td class="math">\( p \)</td>
+                    <td class="math">\( p(1-p) \)</td>
+                    <td class="math">\( p \)</td>
+                    <td class="math">\( 0 \leq p \leq 1 \)</td>
+                    <td class="math">\( k \in \{0, 1\} \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Binomial</td>
+                    <td class="math">\( P(X=k) = \binom{n}{k} p^k (1-p)^{n-k} \)</td>
+                    <td class="math">\( np \)</td>
+                    <td class="math">\( np(1-p) \)</td>
+                    <td class="math">\( np(1-p) + (np)^2 \)</td>
+                    <td class="math">\( n \in \mathbb{N}, 0 \leq p \leq 1 \)</td>
+                    <td class="math">\( k \in \{0, 1, ..., n\} \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Geometric</td>
+                    <td class="math">\( P(X=k) = (1-p)^{k-1} p \)</td>
+                    <td class="math">\( \frac{1}{p} \)</td>
+                    <td class="math">\( \frac{1-p}{p^2} \)</td>
+                    <td class="math">\( \frac{2-p}{p^2} \)</td>
+                    <td class="math">\( 0 < p \leq 1 \)</td>
+                    <td class="math">\( k \in \mathbb{N}^+ \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Poisson</td>
+                    <td class="math">\( P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!} \)</td>
+                    <td class="math">\( \lambda \)</td>
+                    <td class="math">\( \lambda \)</td>
+                    <td class="math">\( \lambda(\lambda + 1) \)</td>
+                    <td class="math">\( \lambda > 0 \)</td>
+                    <td class="math">\( k \in \mathbb{N}_0 \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Uniform</td>
+                    <td class="math">\( f(x) = \frac{1}{b-a} \)</td>
+                    <td class="math">\( \frac{a+b}{2} \)</td>
+                    <td class="math">\( \frac{(b-a)^2}{12} \)</td>
+                    <td class="math">\( \frac{a^2 + ab + b^2}{3} \)</td>
+                    <td class="math">\( a, b \in \mathbb{R}, a < b \)</td>
+                    <td class="math">\( x \in [a, b] \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Normal</td>
+                    <td class="math">\( f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \)</td>
+                    <td class="math">\( \mu \)</td>
+                    <td class="math">\( \sigma^2 \)</td>
+                    <td class="math">\( \mu^2 + \sigma^2 \)</td>
+                    <td class="math">\( \mu \in \mathbb{R}, \sigma > 0 \)</td>
+                    <td class="math">\( x \in \mathbb{R} \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Exponential</td>
+                    <td class="math">\( f(x) = \lambda e^{-\lambda x} \)</td>
+                    <td class="math">\( \frac{1}{\lambda} \)</td>
+                    <td class="math">\( \frac{1}{\lambda^2} \)</td>
+                    <td class="math">\( \frac{2}{\lambda^2} \)</td>
+                    <td class="math">\( \lambda > 0 \)</td>
+                    <td class="math">\( x \in [0, \infty) \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Gamma</td>
+                    <td class="math">\( f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x} \)</td>
+                    <td class="math">\( \frac{\alpha}{\beta} \)</td>
+                    <td class="math">\( \frac{\alpha}{\beta^2} \)</td>
+                    <td class="math">\( \frac{\alpha(\alpha+1)}{\beta^2} \)</td>
+                    <td class="math">\( \alpha>0, \beta>0 \)</td>
+                    <td class="math">\( x > 0 \)</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Beta</td>
+                    <td class="math">\( f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)} \)</td>
+                    <td class="math">\( \frac{\alpha}{\alpha+\beta} \)</td>
+                    <td class="math">\( \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} \)</td>
+                    <td class="math">\( \frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)} \)</td>
+                    <td class="math">\( \alpha>0, \beta>0 \)</td>
+                    <td class="math">\( x \in [0, 1] \)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">Key Relationships</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Formula</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="distribution-name">Variance</td>
+                    <td class="math">\( \text{Var}[X] = E[X^2] - (E[X])^2 \)</td>
+                    <td>Relationship between variance and expectations</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Linear Transformation</td>
+                    <td class="math">\( E[aX + b] = aE[X] + b \)<br>\( \text{Var}[aX + b] = a^2 \text{Var}[X] \)</td>
+                    <td>Effect of linear transformations on mean and variance</td>
+                </tr>
+                <tr>
+                    <td class="distribution-name">Standard Normal</td>
+                    <td class="math">\( Z \sim N(0, 1) \)<br>\( \Phi(-z) = 1 - \Phi(z) \)</td>
+                    <td>Properties of standard normal distribution</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Math 202 Formula Sheet | Probability Distributions Reference Table</p>
+    </footer>
+</div>
+</body>
+</html>
