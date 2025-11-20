@@ -169,8 +169,6 @@
                     <th>Mean (E[X])</th>
                     <th>Variance (Var[X])</th>
                     <th>E[X²]</th>
-                    <th>Parameters</th>
-                    <th>Support</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -180,8 +178,6 @@
                     <td class="math">\( p \)</td>
                     <td class="math">\( p(1-p) \)</td>
                     <td class="math">\( p \)</td>
-                    <td class="math">\( 0 \leq p \leq 1 \)</td>
-                    <td class="math">\( k \in \{0, 1\} \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Binomial</td>
@@ -189,8 +185,6 @@
                     <td class="math">\( np \)</td>
                     <td class="math">\( np(1-p) \)</td>
                     <td class="math">\( np(1-p) + (np)^2 \)</td>
-                    <td class="math">\( n \in \mathbb{N}, 0 \leq p \leq 1 \)</td>
-                    <td class="math">\( k \in \{0, 1, ..., n\} \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Geometric</td>
@@ -198,8 +192,6 @@
                     <td class="math">\( \frac{1}{p} \)</td>
                     <td class="math">\( \frac{1-p}{p^2} \)</td>
                     <td class="math">\( \frac{2-p}{p^2} \)</td>
-                    <td class="math">\( 0 < p \leq 1 \)</td>
-                    <td class="math">\( k \in \mathbb{N}^+ \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Poisson</td>
@@ -207,8 +199,6 @@
                     <td class="math">\( \lambda \)</td>
                     <td class="math">\( \lambda \)</td>
                     <td class="math">\( \lambda(\lambda + 1) \)</td>
-                    <td class="math">\( \lambda > 0 \)</td>
-                    <td class="math">\( k \in \mathbb{N}_0 \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Uniform</td>
@@ -216,8 +206,6 @@
                     <td class="math">\( \frac{a+b}{2} \)</td>
                     <td class="math">\( \frac{(b-a)^2}{12} \)</td>
                     <td class="math">\( \frac{a^2 + ab + b^2}{3} \)</td>
-                    <td class="math">\( a, b \in \mathbb{R}, a < b \)</td>
-                    <td class="math">\( x \in [a, b] \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Normal</td>
@@ -225,8 +213,6 @@
                     <td class="math">\( \mu \)</td>
                     <td class="math">\( \sigma^2 \)</td>
                     <td class="math">\( \mu^2 + \sigma^2 \)</td>
-                    <td class="math">\( \mu \in \mathbb{R}, \sigma > 0 \)</td>
-                    <td class="math">\( x \in \mathbb{R} \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Exponential</td>
@@ -234,8 +220,6 @@
                     <td class="math">\( \frac{1}{\lambda} \)</td>
                     <td class="math">\( \frac{1}{\lambda^2} \)</td>
                     <td class="math">\( \frac{2}{\lambda^2} \)</td>
-                    <td class="math">\( \lambda > 0 \)</td>
-                    <td class="math">\( x \in [0, \infty) \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Gamma</td>
@@ -243,8 +227,6 @@
                     <td class="math">\( \frac{\alpha}{\beta} \)</td>
                     <td class="math">\( \frac{\alpha}{\beta^2} \)</td>
                     <td class="math">\( \frac{\alpha(\alpha+1)}{\beta^2} \)</td>
-                    <td class="math">\( \alpha>0, \beta>0 \)</td>
-                    <td class="math">\( x > 0 \)</td>
                 </tr>
                 <tr>
                     <td class="distribution-name">Beta</td>
@@ -252,8 +234,6 @@
                     <td class="math">\( \frac{\alpha}{\alpha+\beta} \)</td>
                     <td class="math">\( \frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} \)</td>
                     <td class="math">\( \frac{\alpha(\alpha+1)}{(\alpha+\beta)(\alpha+\beta+1)} \)</td>
-                    <td class="math">\( \alpha>0, \beta>0 \)</td>
-                    <td class="math">\( x \in [0, 1] \)</td>
                 </tr>
                 </tbody>
             </table>
